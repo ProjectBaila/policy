@@ -1,0 +1,98 @@
+/* Base */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{font-family:'Montserrat',sans-serif;color:#1E1E1E;background:linear-gradient(135deg,#1E1E1E 0%,#9B9A9A 100%)}
+img{max-width:100%;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Headings all caps */
+h1,h2,h3,h4{text-transform:uppercase}
+
+/* Header */
+.site-header{background:#0f0f0f;color:#fff;position:sticky;top:0;z-index:1000}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.brand-logo{height:42px}
+.brand-text{font-family:'Bebas Neue',cursive;letter-spacing:1px;font-size:1.4rem}
+.header-nav a{color:#fff;text-decoration:none;margin:0 10px;font-size:.95rem;opacity:.85}
+.header-nav a:hover{opacity:1;text-decoration:underline}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#FF6E70,#A51D2D);color:#fff;padding:56px 0;text-align:center;position:relative;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;inset:0;opacity:.12;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width=\"200\" height=\"200\"><circle cx=\"30\" cy=\"30\" r=\"3\" fill=\"white\"/><circle cx=\"150\" cy=\"60\" r=\"2\" fill=\"white\"/><circle cx=\"80\" cy=\"120\" r=\"3\" fill=\"white\"/></svg>');
+  animation:float 18s ease-in-out infinite
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero h1{font-family:'Bebas Neue',cursive;font-size:3rem;letter-spacing:2px;text-shadow:0 3px 6px rgba(0,0,0,.3)}
+.hero .subtitle{margin-top:8px;font-weight:600;opacity:.95}
+
+/* Intro + key message */
+.intro{background:#fff;padding:36px 0}
+.intro h2{font-family:'Bebas Neue',cursive;font-size:1.8rem;margin-bottom:10px}
+.intro p{color:#555}
+.key-message{
+  margin-top:16px;background:linear-gradient(135deg,#FFC72C,#FCB316);color:#1E1E1E;
+  padding:16px;border-radius:10px;text-align:center;font-weight:700;box-shadow:0 8px 20px rgba(255,199,44,.25)
+}
+
+/* Sections */
+.section{background:#fff;padding:40px 0;border-top:1px solid #eee}
+.section h2{font-family:'Bebas Neue',cursive;font-size:1.7rem;margin-bottom:18px}
+
+/* Steps */
+.steps{display:grid;gap:16px}
+.step{
+  position:relative;border:2px solid #eee;border-radius:12px;padding:20px;background:linear-gradient(135deg,#f9f9f9,#fff);
+  transition:.25s
+}
+.step:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.step-number{
+  position:absolute;top:-12px;left:16px;background:#FF6E70;color:#fff;width:30px;height:30px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem
+}
+.step h3{font-family:'Bebas Neue',cursive;margin:8px 0 6px 28px;font-size:1.3rem}
+.step p{color:#555;margin-left:28px}
+
+/* Rules */
+.rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.rule-card{color:#fff;border-radius:12px;padding:20px;text-align:center;transition:.25s}
+.rule-card:hover{transform:translateY(-2px)}
+.rule-card.ok{background:linear-gradient(135deg,#FCB316,#A57C00)}
+.rule-card.warn{background:linear-gradient(135deg,#A51D2D,#FF6E70)}
+.rule-card h3{font-family:'Bebas Neue',cursive;margin-bottom:6px;font-size:1.2rem}
+.note{margin-top:14px;border:2px solid #FFC72C;background:#FFF8E0;padding:14px;border-radius:10px}
+.note h4{font-family:'Bebas Neue',cursive;margin-bottom:6px}
+
+/* Highlight */
+.highlight{border:2px solid #FFC72C;background:#FFF8E0;border-radius:12px;padding:16px}
+.highlight ul{list-style:none}
+.highlight li{margin:6px 0}
+
+/* CTA section */
+.section-cta .cta-button{
+  display:inline-block;background:#FFC72C;color:#1E1E1E;text-decoration:none;font-weight:700;
+  padding:14px 24px;border-radius:10px;box-shadow:0 10px 20px rgba(0,0,0,.15);transition:.25s
+}
+.section-cta .cta-button:hover{transform:translateY(-2px)}
+
+/* Footer */
+.footer{background:linear-gradient(135deg,#1E1E1E,#757575);color:#fff;padding:36px 0;margin-top:20px}
+.footer-logo{height:52px;margin:0 auto 10px;display:block}
+.footer h3{font-family:'Bebas Neue',cursive;text-align:center;margin-bottom:8px}
+.contact{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:10px;opacity:.95}
+.disclaimer{max-width:850px;margin:0 auto;text-align:center;font-size:.95rem;opacity:.9}
+.updated{text-align:center;margin-top:8px;opacity:.85}
+
+/* Responsive */
+@media (max-width:768px){
+  .header-nav{display:none}
+  .rule-grid{grid-template-columns:1fr}
+}
+
+/* Print */
+@media print{
+  body{background:#fff}
+  .site-header,.footer,.section-cta{display:none}
+}
